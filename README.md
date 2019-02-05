@@ -10,10 +10,10 @@ The run_analysis.r script combines two sets of activity tracker observations for
 
 * Initially there are 10299 observations of 563 variables in the data source. This complete data table is kept in the environment as 'full_set'
 * I've extracted only the columns that represent a mean or standard deviation value. This smaller data table is kept in the environment as 'smaller_set'
-* From here I've grouped the observations by activity type and summarized the values by their average for each subject. This compresses the 10299 observations to just 180. Our final data table is 180 observations by 81 variables.  It will be written to the './data/UCI HAR Dataset/' folder in your working directory.
+* From here I've grouped the observations by activity type and summarized the values by their average for each subject. This compresses the 10299 observations to just 180. Our final data table is 180 observations by 81 variables.  It will be written to the './UCI HAR Dataset/' folder in your working directory.
 
 ## Requirements
-The script should be in your working directory. The script assumes you have a /data/ folder in this working directory, and assumes you've extracted the zip file below and the folder structure into the /data/ folder.  For example, the script will look for the features.txt file at ./data/UCI HAR Dataset/features.txt
+The script should be in your working directory. The script assumes you've extracted the zip file below and the folder structure into the working directory.  For example, the script will look for the features.txt file at ./UCI HAR Dataset/features.txt
 
 The script also uses the readr, plyr, and dplyr libraries.
 
