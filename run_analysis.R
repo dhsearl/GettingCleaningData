@@ -6,6 +6,9 @@
 ## 3. Uses descriptive activity names to name the activities in the data set
 ## 4. Appropriately labels the data set with descriptive variable names.
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+library(dplyr)
+library(readr)
+library(plyr)
 
 ## Load both Train and Test into tibbles
 test <- read_delim("./data/UCI HAR Dataset/test/X_test.txt", col_names = F, delim = " ", col_types = list(.default = col_number()))
@@ -18,10 +21,10 @@ train_activities <- read_delim("./data/UCI HAR Dataset/train/y_train.txt", col_n
 train_subjects <- read_delim("./data/UCI HAR Dataset/train/subject_train.txt", col_names = F, delim = " ")
 train <- cbind(train_subjects, train_activities,train)
 
-## 1. Lets rbind the full set.
+## 1. Lets rbind these two into a full set.
 full_set <- rbind(test,train)
 
-## Lets clean up our environment
+## Lets clean up our environment by removing the old data tables
 rm(list = c("test","test_activities","test_subjects","train","train_activities","train_subjects"))
 
 ## 3. Lets add in headers. First pull from features, then add on subject and activity
